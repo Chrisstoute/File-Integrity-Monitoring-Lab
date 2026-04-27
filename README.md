@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🛡️ File Integrity Monitoring (FIM) Lab
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00FF9C,100:0066FF&height=200&section=header&text=File%20Integrity%20Monitoring%20(FIM)%20Lab&fontSize=35&fontColor=ffffff&animation=fadeIn" />
+</p>
 
 ### PowerShell-Based File Tamper Detection Using SHA256 Hashing
 
@@ -60,6 +62,10 @@ The PowerShell monitoring script detects the hash mismatch and alerts that the f
 
 ```powershell
 .\fim_monitor.ps1
+```
+
+---
+
 
 ## 📸 Step-by-Step Demo
 
