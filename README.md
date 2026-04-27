@@ -1,70 +1,85 @@
-\# 🛡️ File Integrity Monitoring (FIM) Lab
+<div align="center">
 
+# 🛡️ File Integrity Monitoring (FIM) Lab
 
+### PowerShell-Based File Tamper Detection Using SHA256 Hashing
 
-\## 📌 Overview
+![PowerShell](https://img.shields.io/badge/PowerShell-File%20Integrity%20Monitoring-blue?style=for-the-badge&logo=powershell)
+![Security](https://img.shields.io/badge/SOC-Detection%20Lab-purple?style=for-the-badge)
+![Hashing](https://img.shields.io/badge/SHA256-Hashing-green?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?style=for-the-badge&logo=windows)
 
-This project simulates a real-world File Integrity Monitoring (FIM) solution using PowerShell. It demonstrates how SOC analysts detect unauthorized file modifications using SHA256 hashing.
+</div>
 
+---
 
+## 🚨 Key Highlight
 
-\## 🧪 Features
+This project demonstrates a simulated **File Integrity Monitoring (FIM)** system capable of detecting unauthorized file modifications in real time using **SHA256 hashing**, mirroring techniques used in SOC environments.
 
-\- Baseline hash generation  
+---
 
-\- Continuous file integrity monitoring  
+## 📌 Overview
 
-\- Real-time detection of unauthorized changes  
+This lab simulates a real-world cybersecurity monitoring workflow where a critical configuration file is baselined, monitored, modified, and then detected as changed.
 
-\- Simulated attacker behavior  
+The goal is to demonstrate how hashing can be used to verify file integrity and identify possible unauthorized tampering.
 
+---
 
+## 🧪 Features
 
-\## 🛠️ Technologies
+- Generates a trusted SHA256 baseline hash
+- Continuously monitors a target file for changes
+- Detects unauthorized modifications in real time
+- Simulates attacker-driven configuration tampering
+- Provides PowerShell-based alert output
 
-\- PowerShell
+---
 
-\- SHA256 Hashing
+## 🛠️ Technologies Used
 
-\- Windows File System
+| Technology | Purpose |
+|---|---|
+| PowerShell | Script automation |
+| SHA256 | File integrity hashing |
+| Windows File System | Local file monitoring |
+| GitHub | Project documentation and version control |
 
+---
 
+## 🚨 Scenario
 
-\## 🚨 Scenario
+A critical system configuration file is monitored for unauthorized changes.  
+An attacker modifies the file by enabling remote access.  
+The PowerShell monitoring script detects the hash mismatch and alerts that the file has been modified.
 
-A critical system configuration file is monitored. When the file is modified (simulating an attacker), the script detects the change and generates an alert.
+---
 
-
-
-\## ▶️ Usage
+## ▶️ Usage
 
 ```powershell
-
-.\\fim\_monitor.ps1
-
-```
-
-
+.\fim_monitor.ps1
 
 ## 📸 Step-by-Step Demo
 
-### 1️⃣ Creating the Lab Directory
+### 1️⃣ Creating the Lab Directory 
 ![Step 1](screenshots/1.%20Making%20HashLab%20Directory.jpg)
 
-### 2️⃣ Generating Baseline Hash
+### 2️⃣ Generating Baseline Hash 
 ![Step 2](screenshots/2.%20Getting%20Baseline%20Hash.jpg)
 
-### 3️⃣ Simulating Configuration Change
+### 3️⃣ Simulating Configuration Change 
 ![Step 3](screenshots/3.%20Updated%20from%20Disabled%20to%20Enabled.jpg)
 
-### 4️⃣ Detecting Hash Change
+### 4️⃣ Detecting Hash Change 
 ![Step 4](screenshots/4.%20Updated%20Hash.jpg)
 
-### 5️⃣ Creating the FIM Script
+### 5️⃣ Creating the FIM Script 
 ![Step 5](screenshots/5.%20Creating%20File%20Integrity%20Monitoring%20Script.jpg)
 
-### 6️⃣ Running the Monitoring Script
+### 6️⃣ Running the Monitoring Script 
 ![Step 6](screenshots/6.%20Running%20FIM%20Script.jpg)
 
-### 7️⃣ Simulated Attack Detection
+### 7️⃣ Simulated Attack Detection 
 ![Step 7](screenshots/7.%20Simulated%20Attack.jpg)
