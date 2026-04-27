@@ -49,22 +49,22 @@ A critical system configuration file is monitored. When the file is modified (si
 ## 📸 Step-by-Step Demo
 
 ### 1️⃣ Creating the Lab Directory
-![Step 1]("screenshots/1. Making HashLab Directory.jpg")
+![Step 1](screenshots/1.%20Making%20HashLab%20Directory.jpg)
 
 ### 2️⃣ Generating Baseline Hash
-![Step 2]("screenshots/2. Getting Baseline Hash.jpg")
+![Step 2](screenshots/2.%20Getting%20Baseline%20Hash.jpg)
 
 ### 3️⃣ Simulating Configuration Change
-![Step 3]("screenshots/3. Updated from Disabled to Enabled.jpg")
+![Step 3](screenshots/3.%20Updated%20from%20Disabled%20to%20Enabled.jpg)
 
 ### 4️⃣ Detecting Hash Change
-![Step 4]("screenshots/4. Updated Hash.jpg")
+![Step 4](screenshots/4.%20Updated%20Hash.jpg)
 
 ### 5️⃣ Creating the FIM Script
-![Step 5]("screenshots/5. Creating File Integrity Monitoring Script.jpg")
+![Step 5](screenshots/5.%20Creating%20File%20Integrity%20Monitoring%20Script.jpg)
 
 ### 6️⃣ Running the Monitoring Script
-![Step 6]("screenshots/6. Running FIM Script.jpg")
+![Step 6](screenshots/6.%20Running%20FIM%20Script.jpg)
 
 ### 7️⃣ Simulated Attack Detection
-![Step 7]("screenshots/7. Simulated Attack.jpg")
+![Step 7](screenshots/7.%20Simulated%20Attack.jpg)
