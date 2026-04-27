@@ -1,0 +1,5 @@
+# System Configuration File
+Firewall=Enabled
+Antivirus=Enabled
+AutoUpdates=Enabled
+RemoteAccess=Disabled
