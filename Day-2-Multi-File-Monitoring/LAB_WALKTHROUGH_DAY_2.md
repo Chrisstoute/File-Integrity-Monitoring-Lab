@@ -1,6 +1,14 @@
+<div align="center">
+
 # 🛡️ File Integrity Monitoring Lab Walkthrough
 
+### 🔍 PowerShell-Based File Integrity Monitoring
 
+<img src="https://img.shields.io/badge/FIM-SHA256-green?style=for-the-badge">
+<img src="https://img.shields.io/badge/PowerShell-Automation-blue?style=for-the-badge">
+<img src="https://img.shields.io/badge/SOC-Detection-pink?style=for-the-badge">
+
+</div>
 
 ---
 
