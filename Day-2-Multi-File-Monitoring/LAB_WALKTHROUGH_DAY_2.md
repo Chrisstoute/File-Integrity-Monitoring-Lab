@@ -1,16 +1,16 @@
-\# 🛡️ File Integrity Monitoring Lab Walkthrough
+# 🛡️ File Integrity Monitoring Lab Walkthrough
 
 
 
-\---
+---
 
 
 
-\# 🔵 Day 2 — Multi-File Monitoring
+# 🔵 Day 2 — Multi-File Monitoring
 
 
 
-\## 🎯 Goal
+## 🎯 Goal
 
 
 
@@ -18,11 +18,11 @@ Enhance the File Integrity Monitoring system to monitor \*\*multiple files simul
 
 
 
-\---
+---
 
 
 
-\## 📁 Step 1 — Create Day 2 Project Structure
+## 📁 Step 1 — Create Day 2 Project Structure
 
 
 
@@ -48,7 +48,7 @@ cd monitored\_files
 
 
 
-\## 📄 Step 2 — Create Files to Monitor
+## 📄 Step 2 — Create Files to Monitor
 
 
 
@@ -76,7 +76,7 @@ Ports=Closed
 
 ```powershell
 
-\# policy.txt
+# policy.txt
 
 PasswordPolicy=Strong
 
@@ -95,7 +95,7 @@ Guest=Disabled
 
 
 
-\## 🔐 Step 3 — Create Multi-File FIM Script
+## 🔐 Step 3 — Create Multi-File FIM Script
 
 
 
@@ -105,7 +105,7 @@ notepad multi\_fim\_monitor.ps1
 
 
 
-\## ⚙️ Step 4 — Script Behavior
+## ⚙️ Step 4 — Script Behavior
 
 
 
@@ -115,9 +115,9 @@ The script performs two main functions:
 
 🟢 First Run (Baseline Mode)
 
-\-Calculates SHA256 hashes for all files
+-Calculates SHA256 hashes for all files
 
-\-Stores hashes in:
+-Stores hashes in:
 
 
 
@@ -129,13 +129,13 @@ baseline\_hashes.csv
 
 🔴 Second Run (Monitoring Mode)
 
-\-Compares current hashes to baseline
+-Compares current hashes to baseline
 
-\-Detects any file modifications
+-Detects any file modifications
 
-\-Outputs alerts to console
+-Outputs alerts to console
 
-\-Logs alerts to:
+-Logs alerts to:
 
 
 
@@ -145,7 +145,7 @@ multi\_fim\_log.txt
 
 
 
-\## ▶️ Step 5 — Run the Script
+## ▶️ Step 5 — Run the Script
 
 
 
@@ -163,7 +163,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 
 
-\## 🚨 Step 6 — Simulate Multi-File Attack
+## 🚨 Step 6 — Simulate Multi-File Attack
 
 
 
@@ -203,7 +203,7 @@ Ports=Open
 
 
 
-\##🧾 Step 8 — Logging Output
+##🧾 Step 8 — Logging Output
 
 
 
@@ -231,17 +231,17 @@ Example log:
 
 
 
-\## 🧠 Skills Demonstrated (Day 2)
+## 🧠 Skills Demonstrated (Day 2)
 
-\-Multi-file monitoring
+-Multi-file monitoring
 
-\-Directory-based integrity checks
+-Directory-based integrity checks
 
-\-CSV baseline storage
+-CSV baseline storage
 
-\-PowerShell automation
+-PowerShell automation
 
-\-Security logging across multiple assets
+-Security logging across multiple assets
 
-\-Real-world SOC detection simulation
+-Real-world SOC detection simulation
 
