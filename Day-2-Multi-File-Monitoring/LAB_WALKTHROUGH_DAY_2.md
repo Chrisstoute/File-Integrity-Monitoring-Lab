@@ -12,563 +12,145 @@
 
 ---
 
-
-
-<<<<<<< HEAD
 # 🔵 Day 2 — Multi-File Monitoring
 
-
-
 ## 🎯 Goal
-=======
 
-
-
+Enhance the File Integrity Monitoring system to monitor multiple files simultaneously, store baseline hashes in a structured format, and detect changes across an entire directory.
 
 ---
 
-
-
-
-
-
-
-# 🔵 Day 2 — Multi-File Monitoring
-
-
-
-
-
-
-
-## 🎯 Goal
->>>>>>> 4bb28af (Added walkthroughs and added screenshots)
-
-
-
-
-
-
-
-Enhance the File Integrity Monitoring system to monitor \\\*\\\*multiple files simultaneously\\\*\\\*, store baseline hashes in a structured format, and detect changes across an entire directory.
-
-
-
-
-
-
-
----
-
-
-
-
 ## 📁 Step 1 — Create Day 2 Project Structure
-
-
-
-
-
-## 📁 Step 1 — Create Day 2 Project Structure
-
-
-
-
-
-
-
 
 ```powershell
-
-
-
-cd $HOME\\\\Documents\\\\HashLab
-
-
-
-
-
-
-
+cd $HOME\Documents\HashLab
 mkdir Day-2-Multi-File-Monitoring
-
-
-
 cd Day-2-Multi-File-Monitoring
-
-
-
-
-
-
-
-mkdir monitored\\\_files
-
-
-
-cd monitored\\\_files
-
-
-
-
-
-
-
+mkdir monitored_files
 ```
-
-
-
 
 ## 📄 Step 2 — Create Files to Monitor
 
-
-
-
-
-## 📄 Step 2 — Create Files to Monitor
-
-
-
-
-
-
-
-
 ```powershell
-
-
-
-notepad firewall.txt
-
-
-
-notepad policy.txt
-
-
-
-notepad users.txt
-
-
-
+notepad monitored_files\firewall.txt
 ```
-
-
-
-
-
-
-
-```powershell
-
-# firewall.txt
-
-
 
 Firewall=Enabled
 
-
-
 Ports=Closed
 
-```
-
-
-
-
-
-
-
 ```powershell
-
-
-# policy.txt
-
-
-
-# policy.txt
-
-
-
+notepad monitored_files\policy.txt
+```
 
 PasswordPolicy=Strong
 
-
-
 MFA=Enabled
 
-```
-
-
-
-
-
-
-
 ```powershell
-
-# users.txt
-
-
+notepad monitored_files\users.txt
+```
 
 Admin=Enabled
 
-
-
 Guest=Disabled
 
-```
-
-
-
+![](screenshots/1.%20Creating%20Monitored%20Files%20Directory.jpg)
 
 ## 🔐 Step 3 — Create Multi-File FIM Script
-
-
-
-
-
-## 🔐 Step 3 — Create Multi-File FIM Script
->>>>>>> 4bb28af (Added walkthroughs and added screenshots)
-
-
-
-
-
-
 
 ```powershell
-
-notepad multi\\\_fim\\\_monitor.ps1
-
+notepad multi_fim_monitor.ps1
 ```
 
+![](screenshots/2.%20Creating%20Multi-File%20Monitoring%20Script.jpg)
 
-
-
-## ⚙️ Step 4 — Script Behavior
-
-
-
-
-
-## ⚙️ Step 4 — Script Behavior
-
-
-
-
-
-
-
+## 📁 ⚙️ Step 4 — Script Behavior
 
 The script performs two main functions:
 
-
-
-
-
-
-
-🟢 First Run (Baseline Mode)
-
-
--Calculates SHA256 hashes for all files
-
--Stores hashes in:
-
-
-
--Calculates SHA256 hashes for all files
-
-
-
--Stores hashes in:
-
-
-
-
-
-
-
+#🟢 First Run — Baseline Mode
+- Calculates SHA256 hashes for all files
+- Stores hashes in:
 
 ```powershell
-
-baseline\\\_hashes.csv
-
+baseline_hashes.csv
 ```
 
-
-
-
-
-
-
-🔴 Second Run (Monitoring Mode)
-
-
--Compares current hashes to baseline
-
--Detects any file modifications
-
--Outputs alerts to console
-
--Logs alerts to:
-
-
-
--Compares current hashes to baseline
-
-
-
--Detects any file modifications
-
-
-
--Outputs alerts to console
-
-
-
--Logs alerts to:
-
-
-
-
-
-
+#🔴 Second Run — Monitoring Mode
+- Compares current hashes to the saved baseline
+- Detects file modifications
+- Detects deleted files
+- Outputs alerts to the console
+- Logs alerts to:
 
 ```powershell
-
-multi\\\_fim\\\_log.txt
-
+multi_fim_log.txt
 ```
-
-
-
 
 ## ▶️ Step 5 — Run the Script
 
-
-
-
-
-## ▶️ Step 5 — Run the Script
-
-
-
-
-
-
-
-
 ```powershell
-
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-
-
-
-
-
-
-
-.\\\\multi\\\_fim\\\_monitor.ps1
-
+.\multi_fim_monitor.ps1
 ```
 
+First run creates the baseline.
 
+Second run starts monitoring.
 
-👉 First run creates the baseline
-
-
-
-👉 Second run begins monitoring
-
-
-
+![](screenshots/3.%20Running%201st%20Multi-File%20Script.jpg)
 
 ## 🚨 Step 6 — Simulate Multi-File Attack
-
-
-
-
-
-## 🚨 Step 6 — Simulate Multi-File Attack
->>>>>>> 4bb28af (Added walkthroughs and added screenshots)
-
-
-
-
-
-
-
-Modify one or more files:
-
-
-
-
-
-
 
 ```powershell
-
-
-
-notepad firewall.txt
-
-
-
+notepad monitored_files\firewall.txt
 ```
-
-
-
-
-
-
 
 Change:
 
-
-
-
-
-
-
-```powershell
-
-
-
 Ports=Closed
-
-
-
-```
-
-
-
-
-
-
 
 To:
 
-
-
-
-
-
-
-```powershell
-
-
-
 Ports=Open
 
+You can also simulate file deletion:
 
-
+```powershell
+del monitored_files\users.txt
 ```
 
+![](screenshots/4.%20Simulated%20Attack%20-%20Modified%20%26%20Delete%20Files.jpg)
 
-
-
-##🧾 Step 8 — Logging Output
-
-
-
-
-##🧾 Step 8 — Logging Output
-
-
-
-
-
-
-
+## 🧾 Step 7 — Logging Output
 
 Logs are written to:
 
-
-
-
-
-
-
 ```powershell
-
-
-
-multi\\\_fim\\\_log.txt
-
-
-
+multi_fim_log.txt
 ```
-
-
-
-
-
-
 
 Example log:
 
-
-
-
-
-
-
 ```powershell
-
-
-
-2026-04-28 09:50:00 | ALERT | File modified: firewall.txt | Old Hash: ... | New Hash: ...
-
-
-
+2026-04-28 09:50:00 | HIGH | File modified: firewall.txt | Old Hash: ... | New Hash: ...
 ```
 
+#🧠 Skills Demonstrated (Day 2)
 
+Multi-file monitoring
 
+Directory-based integrity checks
 
-## 🧠 Skills Demonstrated (Day 2)
+CSV baseline storage
 
--Multi-file monitoring
+PowerShell automation
 
--Directory-based integrity checks
+Security logging across multiple assets
 
--CSV baseline storage
+Real-world SOC detection simulation
 
--PowerShell automation
+File modification detection
 
--Security logging across multiple assets
-
--Real-world SOC detection simulation
-
-
-
-
-
-## 🧠 Skills Demonstrated (Day 2)
-
-
-
--Multi-file monitoring
-
-
-
--Directory-based integrity checks
-
-
-
--CSV baseline storage
-
-
-
--PowerShell automation
-
-
-
--Security logging across multiple assets
-
-
-
-\-Real-world SOC detection simulation
-
-
+File deletion detection
