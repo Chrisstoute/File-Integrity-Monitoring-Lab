@@ -17,25 +17,67 @@
 
 ## 🚨 Key Highlight
 
-This project demonstrates a simulated **File Integrity Monitoring (FIM)** system capable of detecting unauthorized file modifications in real time using **SHA256 hashing**, mirroring techniques used in SOC environments.
+This project simulates a **real-world File Integrity Monitoring (FIM) system** that evolves from basic file hashing to **multi-file monitoring, attack detection, logging, and SOC-style alerting**.
 
 ---
 
 ## 📌 Overview
 
-This lab simulates a real-world cybersecurity monitoring workflow where a critical configuration file is baselined, monitored, modified, and then detected as changed.
+This lab demonstrates how cybersecurity analysts detect unauthorized file changes using hashing and monitoring techniques.
 
-The goal is to demonstrate how hashing can be used to verify file integrity and identify possible unauthorized tampering.
+The project is built in phases, progressively adding more advanced capabilities to simulate a real SOC environment.
+
+---
+
+## 🧠 Project Roadmap
+
+### 🟢 Day 1 — Basic Hashing & Single File Monitoring
+- Generate SHA256 baseline hash
+- Monitor a single critical file
+- Detect unauthorized modifications
+- Implement basic alerting and logging
+
+📄 Walkthrough:  
+`Day-1-Basic-Hashing-and-FIM/LAB_WALKTHROUGH_DAY_1.md`
+
+---
+
+### 🔵 Day 2 — Multi-File Monitoring
+- Monitor entire directories instead of a single file
+- Store baseline hashes in CSV format
+- Detect file modifications and deletions
+- Expand logging across multiple assets
+
+📄 Walkthrough:  
+`Day-2-Multi-File-Monitoring/LAB_WALKTHROUGH_DAY_2.md`
+
+---
+
+### 🔥 Day 3 — (Coming Next) Attacker Tracking & Attribution
+- Identify which user modified files
+- Capture process-level activity
+- Enhance logs with attribution data
+- Simulate insider threat scenarios
+
+---
+
+### 🧠 Day 4 — (Planned) SIEM Mode
+- Convert logs into SIEM-style format
+- Add severity levels (LOW / MEDIUM / HIGH)
+- Enable structured log ingestion
+- Simulate SOC alert workflows
 
 ---
 
 ## 🧪 Features
 
-- Generates a trusted SHA256 baseline hash
-- Continuously monitors a target file for changes
-- Detects unauthorized modifications in real time
-- Simulates attacker-driven configuration tampering
-- Provides PowerShell-based alert output
+- SHA256 file integrity validation
+- Real-time file monitoring
+- Multi-file and directory monitoring
+- File modification and deletion detection
+- Structured logging system
+- Simulated attacker behavior
+- SOC-style alert generation
 
 ---
 
@@ -43,61 +85,68 @@ The goal is to demonstrate how hashing can be used to verify file integrity and 
 
 | Technology | Purpose |
 |---|---|
-| PowerShell | Script automation |
+| PowerShell | Automation and scripting |
 | SHA256 | File integrity hashing |
-| Windows File System | Local file monitoring |
-| GitHub | Project documentation and version control |
+| Windows File System | File monitoring |
+| CSV | Baseline storage |
+| GitHub | Version control and documentation |
 
 ---
 
 ## 🚨 Scenario
 
-A critical system configuration file is monitored for unauthorized changes.  
-An attacker modifies the file by enabling remote access.  
-The PowerShell monitoring script detects the hash mismatch and alerts that the file has been modified.
+A system is monitored for unauthorized changes.
+
+An attacker modifies configuration files or deletes critical assets.  
+The monitoring system detects the activity, compares hashes against a trusted baseline, and generates alerts with detailed logging.
 
 ---
 
 ## ▶️ Usage
 
+### Day 1 (Single File Monitoring)
 ```powershell
 .\fim_monitor.ps1
 ```
 
----
+### Day 2 (Multi-File Monitoring)
+```powershell
+.\multi_fim_monitor.ps1
+```
+
+#📸 Screenshots
+
+Refer to each day's walkthrough for step-by-step visuals and demonstrations.
 
 
-## 📸 Step-by-Step Demo (Day 1)
+#🧠 Skills Demonstrated
 
-### 1️⃣ Creating the Lab Directory
-![Step 1](Day-1-Basic-Hashing-and-FIM/screenshots/1.%20Making%20HashLab%20Directory.jpg)
+PowerShell Scripting
 
----
+File Integrity Monitoring (FIM)
 
-### 2️⃣ Generating Baseline Hash
-![Step 2](Day-1-Basic-Hashing-and-FIM/screenshots/2.%20Getting%20Baseline%20Hash.jpg)
+SHA256 Hashing
 
----
+Security Event Logging
 
-### 3️⃣ Simulating Configuration Change
-![Step 3](Day-1-Basic-Hashing-and-FIM/screenshots/3.%20Updated%20from%20Disabled%20to%20Enabled.jpg)
+Threat Detection
 
----
+Directory Monitoring
 
-### 4️⃣ Detecting Hash Change
-![Step 4](Day-1-Basic-Hashing-and-FIM/screenshots/4.%20Updated%20Hash.jpg)
+Incident Simulation
 
----
+SOC Workflow Concepts
 
-### 5️⃣ Creating the FIM Script
-![Step 5](Day-1-Basic-Hashing-and-FIM/screenshots/5.%20Creating%20File%20Integrity%20Monitoring%20Script.jpg)
 
----
+🚀 Future Improvements
 
-### 6️⃣ Running the Monitoring Script
-![Step 6](Day-1-Basic-Hashing-and-FIM/screenshots/6.%20Running%20FIM%20Script.jpg)
+Real-time file system watcher (instead of polling)
 
----
+Integration with SIEM platforms
 
-### 7️⃣ Simulated Attack Detection
-![Step 7](Day-1-Basic-Hashing-and-FIM/screenshots/7.%20Simulated%20Attack.jpg)
+Email or webhook alerting
+
+Dashboard visualization
+
+Threat intelligence enrichment
+
