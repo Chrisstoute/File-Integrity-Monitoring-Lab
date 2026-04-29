@@ -1,0 +1,3 @@
+Admin=Disabled
+Guest=Disabled
+MFA=Enabled

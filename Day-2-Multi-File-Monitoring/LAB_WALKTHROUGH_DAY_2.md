@@ -55,7 +55,7 @@ Admin=Enabled
 
 Guest=Disabled
 
-![](screenshots/1.%20Creating%20Monitored%20Files%20Directory.jpg)
+![](Screenshots/1.%20Creating%20Monitored%20Files%20Directory.jpg)
 
 ## 🔐 Step 3 — Create Multi-File FIM Script
 
@@ -63,7 +63,7 @@ Guest=Disabled
 notepad multi_fim_monitor.ps1
 ```
 
-![](screenshots/2.%20Creating%20Multi-File%20Monitoring%20Script.jpg)
+![](Screenshots/2.%20Creating%20Multi-File%20Monitoring%20Script.jpg)
 
 ## 📁 ⚙️ Step 4 — Script Behavior
 
@@ -99,7 +99,7 @@ First run creates the baseline.
 
 Second run starts monitoring.
 
-![](screenshots/3.%20Running%201st%20Multi-File%20Script.jpg)
+![](Screenshots/3.%20Running%201st%20Multi-File%20Script.jpg)
 
 ## 🚨 Step 6 — Simulate Multi-File Attack
 
@@ -121,7 +121,7 @@ You can also simulate file deletion:
 del monitored_files\users.txt
 ```
 
-![](screenshots/4.%20Simulated%20Attack%20-%20Modified%20%26%20Delete%20Files.jpg)
+![](Screenshots/4.%20Simulated%20Attack%20-%20Modified%20%26%20Delete%20Files.jpg)
 
 ## 🧾 Step 7 — Logging Output
 
