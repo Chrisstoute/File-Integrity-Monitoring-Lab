@@ -34,6 +34,8 @@ cd HashLab
 notepad system_config.txt
 ```
 
+![](screenshots/1.%20Making%20HashLab%20Directory.jpg)
+
 Example file contents:
 ```powershell
 # System Configuration File
@@ -48,12 +50,19 @@ RemoteAccess=Disabled
 ```powershell
 notepad system_config.txt
 ```
+![](screenshots/2.%20Getting%20Baseline%20Hash.jpg)
+
+![](screenshots/3.%20Updated%20from%20Disabled%20to%20Enabled.jpg)
+
+![](screenshots/4.%20Updated%20Hash.jpg)
 
 ## 🛠️ Step 4 — Create the FIM Script
 
 ```powershell
 notepad fim_monitor.ps1
 ```
+
+![](screenshots/5.%20Creating%20File%20Integrity%20Monitoring%20Script.jpg)
 
 ## ▶️ Step 5 — Run the Script
 
@@ -62,12 +71,16 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\fim_monitor.ps1
 ```
 
+![](screenshots/6.%20Running%20FIM%20Script.jpg)
+
 ## 🚨 Step 6 — Simulate File Tampering
 Modify system_config.txt:
 
 ```powershell
 RemoteAccess=Enabled
 ```
+
+![](screenshots/7.%20Simulated%20Attack.jpg)
 
 ## 🧾 Step 7 — Add Logging
 The script was upgraded to write alerts to:
