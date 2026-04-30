@@ -1,0 +1,2 @@
+Firewall=Enabled
+Ports=Closed
