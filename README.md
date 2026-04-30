@@ -53,7 +53,7 @@ The project is built in phases, progressively adding more advanced capabilities 
 
 ---
 
-### 🔥 Day 3 — (Coming Next) Attacker Tracking & Attribution
+### 🔥 Day 3 — Attacker Tracking & Attribution
 - Identify which user modified files
 - Capture process-level activity
 - Enhance logs with attribution data
@@ -61,7 +61,7 @@ The project is built in phases, progressively adding more advanced capabilities 
 
 ---
 
-### 🧠 Day 4 — (Planned) SIEM Mode
+### 🧠 Day 4 — (Coming Next) SIEM Mode
 - Convert logs into SIEM-style format
 - Add severity levels (LOW / MEDIUM / HIGH)
 - Enable structured log ingestion
