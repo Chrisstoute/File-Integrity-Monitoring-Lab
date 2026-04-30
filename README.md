@@ -102,24 +102,13 @@ The monitoring system detects the activity, compares hashes against a trusted ba
 
 ---
 
-## ▶️ Usage
-
-### Day 1 (Single File Monitoring)
-```powershell
-.\fim_monitor.ps1
-```
-
-### Day 2 (Multi-File Monitoring)
-```powershell
-.\multi_fim_monitor.ps1
-```
 
 #📸 Screenshots
 
 Refer to each day's walkthrough for step-by-step visuals and demonstrations.
 
 
-#🧠 Skills Demonstrated
+## 🧠 Skills Demonstrated
 
 PowerShell Scripting
 
@@ -138,7 +127,7 @@ Incident Simulation
 SOC Workflow Concepts
 
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 Real-time file system watcher (instead of polling)
 
