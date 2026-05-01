@@ -4,11 +4,12 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00FF9C,100:0066FF&height=200&section=header&text=File%20Integrity%20Monitoring%20(FIM)%20Lab&fontSize=35&fontColor=ffffff&animation=fadeIn" />
 </p>
 
-### PowerShell-Based File Tamper Detection Using SHA256 Hashing
+### 🛡️ PowerShell-Based File Integrity Monitoring & Threat Detection Lab
 
-![PowerShell](https://img.shields.io/badge/PowerShell-File%20Integrity%20Monitoring-blue?style=for-the-badge&logo=powershell)
-![Security](https://img.shields.io/badge/SOC-Detection%20Lab-purple?style=for-the-badge)
-![Hashing](https://img.shields.io/badge/SHA256-Hashing-green?style=for-the-badge)
+![PowerShell](https://img.shields.io/badge/PowerShell-Automation-blue?style=for-the-badge&logo=powershell)
+![Security](https://img.shields.io/badge/SOC-Threat%20Detection-purple?style=for-the-badge)
+![Hashing](https://img.shields.io/badge/SHA256-Integrity%20Validation-green?style=for-the-badge)
+![SIEM](https://img.shields.io/badge/SIEM-Ready-orange?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?style=for-the-badge&logo=windows)
 
 </div>
@@ -17,19 +18,26 @@
 
 ## 🚨 Key Highlight
 
-This project simulates a **real-world File Integrity Monitoring (FIM) system** that evolves from basic file hashing to **multi-file monitoring, attack detection, logging, and SOC-style alerting**.
+This project simulates a **real-world File Integrity Monitoring (FIM) system**, evolving from basic hashing to a **SOC-ready detection pipeline** with:
+
+- 🔍 Threat detection  
+- 🧠 Attacker attribution  
+- 📊 Severity classification  
+- 📦 Structured JSON logging (SIEM-ready)
 
 ---
 
 ## 📌 Overview
 
-This lab demonstrates how cybersecurity analysts detect unauthorized file changes using hashing and monitoring techniques.
+This lab demonstrates how cybersecurity analysts **detect, investigate, and log unauthorized file activity** using PowerShell.
 
-The project is built in phases, progressively adding more advanced capabilities to simulate a real SOC environment.
+The project is built in phases to mirror a real SOC workflow:
+
+> Detection → Scaling → Attribution → SIEM Integration
 
 ---
 
-## 🧠 Project Roadmap
+## 🧠 Project Evolution
 
 ### 🟢 Day 1 — Basic Hashing & Single File Monitoring
 - Generate SHA256 baseline hash
@@ -53,31 +61,40 @@ The project is built in phases, progressively adding more advanced capabilities 
 
 ---
 
-### 🔥 Day 3 — Attacker Tracking & Attribution
-- Identify which user modified files
-- Capture process-level activity
-- Enhance logs with attribution data
-- Simulate insider threat scenarios
+### 🔴 Day 3 — Attacker Tracking & Attribution
+- Identify **who** modified files (user + host)
+- Detect file modifications and deletions
+- Enhance logs with contextual data
+- Implement baseline updates to reduce alert fatigue
+- Simulate insider threat activity
+
+📄 Walkthrough:  
+`Day-3-Attacker-Tracker/LAB_WALKTHROUGH_DAY_3.md`
 
 ---
 
-### 🧠 Day 4 — (Coming Next) SIEM Mode
-- Convert logs into SIEM-style format
-- Add severity levels (LOW / MEDIUM / HIGH)
-- Enable structured log ingestion
-- Simulate SOC alert workflows
+### 🟣 Day 4 — SIEM Mode (Structured Logging)
+- Convert logs into **structured JSON format**
+- Implement severity levels (LOW / MEDIUM / HIGH)
+- Normalize security events for ingestion
+- Simulate SOC alert pipelines
+- Prepare logs for SIEM platforms (Splunk, Sentinel, Exabeam)
+
+📄 Walkthrough:  
+`Day-4-SIEM-Mode/LAB_WALKTHROUGH_DAY_4.md`
 
 ---
 
 ## 🧪 Features
 
-- SHA256 file integrity validation
-- Real-time file monitoring
-- Multi-file and directory monitoring
-- File modification and deletion detection
-- Structured logging system
-- Simulated attacker behavior
-- SOC-style alert generation
+- ✅ SHA256 file integrity validation  
+- ✅ Multi-file & directory monitoring  
+- ✅ File modification and deletion detection  
+- ✅ Attacker attribution (user + host)  
+- ✅ Severity-based alert classification  
+- ✅ JSON structured logging (SIEM-ready)  
+- ✅ Baseline management & alert tuning  
+- ✅ Simulated attack scenarios  
 
 ---
 
@@ -85,57 +102,81 @@ The project is built in phases, progressively adding more advanced capabilities 
 
 | Technology | Purpose |
 |---|---|
-| PowerShell | Automation and scripting |
+| PowerShell | Automation & scripting |
 | SHA256 | File integrity hashing |
 | Windows File System | File monitoring |
 | CSV | Baseline storage |
-| GitHub | Version control and documentation |
+| JSON | Structured logging for SIEM |
+| GitHub | Version control & documentation |
 
 ---
 
-## 🚨 Scenario
+## 🚨 Detection Scenario
 
-A system is monitored for unauthorized changes.
+A system is continuously monitored for unauthorized changes.
 
-An attacker modifies configuration files or deletes critical assets.  
-The monitoring system detects the activity, compares hashes against a trusted baseline, and generates alerts with detailed logging.
+An attacker:
+- Modifies critical configuration files  
+- Deletes monitored assets  
+
+The system:
+- Detects changes via hash comparison  
+- Identifies the responsible user and host  
+- Assigns severity based on file sensitivity  
+- Logs events in structured JSON format for SIEM ingestion  
 
 ---
 
+## 📸 Screenshots
 
-#📸 Screenshots
+Each phase includes detailed screenshots and walkthroughs:
 
-Refer to each day's walkthrough for step-by-step visuals and demonstrations.
+- 📁 Day 1 → Basic Detection  
+- 📁 Day 2 → Multi-File Monitoring  
+- 📁 Day 3 → Attacker Attribution  
+- 📁 Day 4 → SIEM Logging  
 
+👉 See individual walkthroughs for full visuals.
+
+---
 
 ## 🧠 Skills Demonstrated
 
-PowerShell Scripting
+- PowerShell Scripting  
+- File Integrity Monitoring (FIM)  
+- SHA256 Hashing  
+- Security Event Logging  
+- Threat Detection & Analysis  
+- Attacker Attribution  
+- SIEM Log Structuring (JSON)  
+- Detection Engineering Concepts  
+- SOC Workflow Simulation  
 
-File Integrity Monitoring (FIM)
-
-SHA256 Hashing
-
-Security Event Logging
-
-Threat Detection
-
-Directory Monitoring
-
-Incident Simulation
-
-SOC Workflow Concepts
-
+---
 
 ## 🚀 Future Improvements
 
-Real-time file system watcher (instead of polling)
+- ⚡ Real-time monitoring (FileSystemWatcher)  
+- 📡 SIEM integration (Splunk / Sentinel ingestion)  
+- 📧 Email / webhook alerting  
+- 📊 Dashboard visualization  
+- 🌐 Threat intelligence enrichment  
 
-Integration with SIEM platforms
+---
 
-Email or webhook alerting
+## 💼 Why This Project Matters
 
-Dashboard visualization
+This project demonstrates the ability to:
 
-Threat intelligence enrichment
+✔ Build detection systems from scratch  
+✔ Simulate real-world SOC workflows  
+✔ Transition from raw data → actionable intelligence  
+✔ Prepare logs for enterprise security platforms  
 
+---
+
+## 🔗 Connect With Me
+
+💼 [LinkedIn](https://www.linkedin.com/in/chris-stoute-157040164/)
+
+---
