@@ -53,7 +53,7 @@ The project is built in phases, progressively adding more advanced capabilities 
 
 ---
 
-### 🔥 Day 3 — (Coming Next) Attacker Tracking & Attribution
+### 🔥 Day 3 — Attacker Tracking & Attribution
 - Identify which user modified files
 - Capture process-level activity
 - Enhance logs with attribution data
@@ -61,7 +61,7 @@ The project is built in phases, progressively adding more advanced capabilities 
 
 ---
 
-### 🧠 Day 4 — (Planned) SIEM Mode
+### 🧠 Day 4 — (Coming Next) SIEM Mode
 - Convert logs into SIEM-style format
 - Add severity levels (LOW / MEDIUM / HIGH)
 - Enable structured log ingestion
@@ -102,24 +102,13 @@ The monitoring system detects the activity, compares hashes against a trusted ba
 
 ---
 
-## ▶️ Usage
-
-### Day 1 (Single File Monitoring)
-```powershell
-.\fim_monitor.ps1
-```
-
-### Day 2 (Multi-File Monitoring)
-```powershell
-.\multi_fim_monitor.ps1
-```
 
 #📸 Screenshots
 
 Refer to each day's walkthrough for step-by-step visuals and demonstrations.
 
 
-#🧠 Skills Demonstrated
+## 🧠 Skills Demonstrated
 
 PowerShell Scripting
 
@@ -138,7 +127,7 @@ Incident Simulation
 SOC Workflow Concepts
 
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 Real-time file system watcher (instead of polling)
 
