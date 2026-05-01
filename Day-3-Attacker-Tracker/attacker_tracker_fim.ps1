@@ -5,13 +5,10 @@ $baselineFile = "baseline_hashes.csv"
 $logFile = "attacker_tracker_log.txt"
 $interval = 5
 
-# Current user context
 $currentUser = "$env:USERDOMAIN\$env:USERNAME"
 $hostname = $env:COMPUTERNAME
 
-# Create baseline if it does not exist
 if (!(Test-Path $baselineFile)) {
-
     Write-Host "[+] Creating baseline hashes..." -ForegroundColor Green
 
     Get-ChildItem $monitorFolder -File | ForEach-Object {
@@ -42,13 +39,27 @@ while ($true) {
 
     foreach ($entry in $baseline) {
 
-        $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+        $severity = "LOW"
+
+        if ($entry.FileName -match "firewall|policy") {
+            $severity = "HIGH"
+        }
+        elseif ($entry.FileName -match "users") {
+            $severity = "MEDIUM"
+        }
 
         if (!(Test-Path $entry.FilePath)) {
+            $logEntry = [PSCustomObject]@{
+    timestamp = (Get-Date -Format o)
+    severity  = $severity
+    user      = $currentUser
+    host      = $hostname
+    action    = "DELETED"
+    file      = $entry.FileName
+    old_hash  = $entry.Hash
+} | ConvertTo-Json -Compress
 
-            $logEntry = "$timestamp | HIGH | User: $currentUser | Host: $hostname | Action: Deleted | File: $($entry.FileName)"
-
-            Write-Host "[!!!] HIGH ALERT: File deleted: $($entry.FileName)" -ForegroundColor Red
+            Write-Host "[!!!] $severity ALERT: File deleted: $($entry.FileName)" -ForegroundColor Red
             Write-Host "User: $currentUser"
             Write-Host "Host: $hostname"
 
@@ -59,10 +70,18 @@ while ($true) {
         $currentHash = (Get-FileHash $entry.FilePath -Algorithm SHA256).Hash
 
         if ($currentHash -ne $entry.Hash) {
+            $logEntry = [PSCustomObject]@{
+    timestamp = (Get-Date -Format o)
+    severity  = $severity
+    user      = $currentUser
+    host      = $hostname
+    action    = "MODIFIED"
+    file      = $entry.FileName
+    old_hash  = $entry.Hash
+    new_hash  = $currentHash
+} | ConvertTo-Json -Compress
 
-            $logEntry = "$timestamp | HIGH | User: $currentUser | Host: $hostname | Action: Modified | File: $($entry.FileName) | Old Hash: $($entry.Hash) | New Hash: $currentHash"
-
-            Write-Host "[!!!] HIGH ALERT: File modified: $($entry.FileName)" -ForegroundColor Red
+            Write-Host "[!!!] $severity ALERT: File modified: $($entry.FileName)" -ForegroundColor Red
             Write-Host "User: $currentUser"
             Write-Host "Host: $hostname"
             Write-Host "Old Hash: $($entry.Hash)"
@@ -70,9 +89,8 @@ while ($true) {
 
             Add-Content -Path $logFile -Value $logEntry
 
-# 🔥 Update baseline so it doesn't spam alerts
-$entry.Hash = $currentHash
-$baseline | Export-Csv $baselineFile -NoTypeInformation
+            $entry.Hash = $currentHash
+            $baseline | Export-Csv $baselineFile -NoTypeInformation
         }
         else {
             Write-Host "[OK] No change: $($entry.FileName)" -ForegroundColor Green
