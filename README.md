@@ -45,7 +45,7 @@ The project is built in phases to mirror a real SOC workflow:
 - Detect unauthorized modifications
 - Implement basic alerting and logging
 
-[📄 Day 1 Walkthrough](LAB_WALKTHROUGH_DAY_1.md)
+[📄 Day 1 Walkthrough](Day-1-Basic-Hashing-and-FIM/LAB_WALKTHROUGH_DAY_1.md)
 
 ---
 
