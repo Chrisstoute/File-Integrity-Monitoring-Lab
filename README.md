@@ -45,8 +45,7 @@ The project is built in phases to mirror a real SOC workflow:
 - Detect unauthorized modifications
 - Implement basic alerting and logging
 
-📄 Walkthrough:  
-`Day-1-Basic-Hashing-and-FIM/LAB_WALKTHROUGH_DAY_1.md`
+[📄 Day 1 Walkthrough](LAB_WALKTHROUGH_DAY_1.md)
 
 ---
 
@@ -56,8 +55,7 @@ The project is built in phases to mirror a real SOC workflow:
 - Detect file modifications and deletions
 - Expand logging across multiple assets
 
-📄 Walkthrough:  
-`Day-2-Multi-File-Monitoring/LAB_WALKTHROUGH_DAY_2.md`
+[📄 Day 2 Walkthrough](Day-2-Multi-File-Monitoring/LAB_WALKTHROUGH_DAY_2.md)
 
 ---
 
@@ -68,8 +66,7 @@ The project is built in phases to mirror a real SOC workflow:
 - Implement baseline updates to reduce alert fatigue
 - Simulate insider threat activity
 
-📄 Walkthrough:  
-`Day-3-Attacker-Tracker/LAB_WALKTHROUGH_DAY_3.md`
+[📄 Day 3 Walkthrough](Day-3-Attacker-Tracker/LAB_WALKTHROUGH_DAY_3.md)
 
 ---
 
@@ -79,9 +76,8 @@ The project is built in phases to mirror a real SOC workflow:
 - Normalize security events for ingestion
 - Simulate SOC alert pipelines
 - Prepare logs for SIEM platforms (Splunk, Sentinel, Exabeam)
-
-📄 Walkthrough:  
-`Day-4-SIEM-Mode/LAB_WALKTHROUGH_DAY_4.md`
+ 
+[📄 Day 4 Walkthrough](Day-4-SIEM-Mode/LAB_WALKTHROUGH_DAY_4.md)
 
 ---
 
